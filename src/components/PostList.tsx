@@ -1,6 +1,7 @@
 import React from "react";
 import useLikes from "../hooks/useLike";
 import posts from "../data/Posts";
+import PostCard from "./PostCard";
 
 const PostList = () => {
   const { likes, handleLike } = useLikes();
@@ -8,12 +9,12 @@ const PostList = () => {
   return (
     <div>
       {posts.map((post) => (
-        <div key={post.id}>
-          {" "}
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
-          <button onClick={() => handleLike(post.id)}>いいね: {likes[post.id] || 0}</button>
-        </div>
+        <PostCard
+          key={post.id}
+          post={post}
+          likeCount={likes[post.id] || 0}
+          onLike={() => handleLike(post.id)}
+        />
       ))}
     </div>
   );
