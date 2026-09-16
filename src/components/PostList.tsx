@@ -7,7 +7,7 @@ const PostList = () => {
   const { likes, handleLike } = useLikes();
 
   return (
-    <div>
+    <div className="mt-10">
       {posts.map((post) => (
         <PostCard
           key={post.id}
