@@ -1,5 +1,5 @@
 interface PostType {
-  id: string;
+  id: number;
   title: string;
   content: string;
 }
